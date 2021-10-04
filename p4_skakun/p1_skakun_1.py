@@ -1,0 +1,16 @@
+#input
+name = input("Enter your name:" ) 
+surname = input('Enter your surname:')
+phone_num = input('Enter your phone number:')
+street = input('Enter your street:')
+house_num = input('Enter your house number:')
+flat_num = input('Enter your flat number:')
+city = input('Enter your city:')
+index = input('Enter your index:')
+country = input('Enter your country:')
+#output
+print(name, surname) 
+print(phone_num)
+print('str.',street, house_num, ',ap.',flat_num,',', city )
+print(index)
+print(country)
