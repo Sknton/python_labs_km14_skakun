@@ -36,32 +36,39 @@ def permutation_func(matr):
             product_of_arg.append(a_xx)           
         list_of_all_arg.append(product_of_arg)
     return list_of_all_arg
+
 def product(pairs_for_the_prod):
     """The function finds the product of all pairs a_xx."""
-    list_of_prod_a = []
-    for i in range(0, math.factorial(size_of_matr)):
-        prod_a = 1
-        for a in rang:
-            prod_a = prod_a*pairs_for_the_prod[i][a]
-        list_of_prod_a.append(prod_a)
-    permut = list(itertools.permutations(rang, size_of_matr))
-    for ind in permut:
+    list_of_prod_a = list()
+    for x in pairs_for_the_prod:
+        product = 1
+        for y in x:
+            product = product * y
+        list_of_prod_a.append(product)
+    
+    indexs = list(itertools.permutations(list(range(0, size_of_matr)), size_of_matr))
+    k = 0
+    for index in indexs:
         x = 0
         for i in range(size_of_matr):
             for j in range(i+1, size_of_matr):
-                if ind[i] > ind[j] :
-                    x += 1
-            if x%2 == 0: 
-                sign = prod_a*1 
-            else: 
-                sign = prod_a*(-1)
-            for k in range(0, math.factorial(size_of_matr)):
-                list_of_prod_a[k] = list_of_prod_a[k]*sign
+                if index[i] > index[j] :
+                        x = x + 1
+        if x%2 == 0:
+            list_of_prod_a[k] = list_of_prod_a[k]*1 
+        else: 
+            list_of_prod_a[k] = list_of_prod_a[k]*(-1)
+        k += 1
+    print(list_of_prod_a)
+
     return list_of_prod_a
+    
+   
 def sum(list_of_prod_a):
+    
     sum_=0
-    for i in range(0, math.factorial(size_of_matr)):
-        sum_ = sum_ + list_of_prod_a[i]
+    for x in list_of_prod_a:
+        sum_ = sum_ + x
     return sum_
 
 
