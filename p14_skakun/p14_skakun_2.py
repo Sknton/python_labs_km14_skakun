@@ -1,6 +1,6 @@
 import json
 
-with open('C:\\Users\\Пользователь\\лаби\\python_labs_km14_skakun\\p14_skakun\\image_info_test-dev2017.json') as file:
+with open('image_info_test-dev2017.json') as file:
     for line in file:
         dict = json.loads(line)
         print("Number of images:", len(dict['images']))
