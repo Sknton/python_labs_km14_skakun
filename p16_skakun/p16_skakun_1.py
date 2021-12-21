@@ -52,15 +52,17 @@ def one_lst(boole = True):
                     for i in func(num_page_in_book):
                         print(i)
                     print('Number of notebooks in the book:', len(func(num_page_in_book)))
-                for list_of_book in func(num_page_in_book):
-                    for i in list_of_book:
-                        print (i)
-                    print('Number of notebooks in the book:', len(list_of_book))
-                return list_of_book
+                    return func(num_page_in_book)
+                else:
+                    for list_of_book in func(num_page_in_book):
+                        for i in list_of_book:
+                            print (i)
+                        print('Number of notebooks in the book:', len(list_of_book))
+                    return list_of_book
         return wrapper
     return wrap
 
-@one_lst(True)
+@one_lst(False)
 def pagination(num_page_in_book):
     list_of_all_notebook = []
     num_page1 = 16
